@@ -40,86 +40,6 @@ header li a:hover {
 }
 
 
-p {
-  color: #fff;
-  font-family: 'Oswald', sans-serif;
-  font-size: 1em;
-  font-weight: 700;
-}
-
-p span {
-  display: inline-block;
-  position: relative;
-  transform-style: preserve-3d;
-  perspective: 500px;
-  -webkit-font-smoothing: antialiased;
-}
-
-p span::before,
-p span::after {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: -1px;
-  transform-origin: left top;
-  transition: all ease-out .3s;
-  content: attr(data-text);
-}
-
-p span::before {
-  z-index: 1;
-  color: rgba(0,0,0,0.2);
-  transform: scale(1.1,1) skew(0deg,20deg);
-}
-
-p span::after {
-  z-index: 2;
-  color: #3498db;
-  text-shadow: -1px 0 1px #3498db,
-                1px 0 1px #fff;
-  transform: rotateY(-40deg);
-}
-
-p span:hover::before { transform: scale(1.1,1) skew(0deg,5deg); }
-
-p span:hover::after { transform: rotateY(-10deg); }
-
-p span + span { margin-left: .3em; }
-
-@media (min-width: 20em) {
-  p { font-size: 2em; }
-
-  p span::before,
-  p span::after {
-    display: block;
-  }
-}
-
-@media (min-width: 30em) {
-  p { font-size: 3em; }
-}
-
-@media (min-width: 40em) {
-  p { font-size: 5em; }
-}
-
-@media (min-width: 60em) {
-  p { font-size: 8em; }
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #3498db;
-}
-
 
 /*背景（header)*/
 .bg-img img {
@@ -129,16 +49,20 @@ body {
   /*  background-size: cover;*/
 }
 
+.bg-img {
+  background: #f5f5f5;
+}
+
 /*Aboutの規定*/
 .About {
   width: 100%;
   height: 900px;
   position: relative;
-  background: #f9f8f7;
+  background: #f5f5f5;
 }
 
 .info img {
-  position: absolute;
+  
   width: 60%;
 }
 
@@ -155,8 +79,8 @@ body {
 }
 
 .title-1 {
-/*  padding: 40px 60px 20px;*/
-  font-size: 20px;
+  padding: 40px 60px 20px;
+  font-size: 30px;
   font-family: 'Noto Serif JP', serif;
 }
 
@@ -198,7 +122,7 @@ h4 {
   width: 100%;
   margin-bottom: 0px;
   position: relative;
-  background: #f9f8f7;
+  background: #f5f5f5;
 }
 
 .title-2 {
