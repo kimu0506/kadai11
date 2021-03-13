@@ -42,7 +42,7 @@ header li a:hover {
 
 
 /*背景（header)*/
-.image-slider{
+.image-slider {
   width: 100px;
   height: 100px;
 }
@@ -51,7 +51,7 @@ header li a:hover {
 .image-slider img {
   width: 50vw;
   height: 50vh;
-   background-position: center center;
+  background-position: center center;
   background-size: cover;
 }
 
@@ -77,14 +77,11 @@ header li a:hover {
 }
 
 
-.image-slider {
-	width: 100vw;
-	height: 100vh;
-	background-position:center center;
-	background-size: cover;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.bg-slider img {
+  width: 50vw;
+  height: 50vh;
+  background-position: center center;
+  background-size: cover;
 }
 
 
@@ -293,7 +290,7 @@ h4 {
 
   transform: scale(1.8);
 
-  box-shadow: 10px  #eb496d;
+  box-shadow: 10px #eb496d;
 }
 
 .sns img {
