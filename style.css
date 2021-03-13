@@ -7,7 +7,7 @@
 /*コピー用*/
 /*headerの設定*/
 .header {
-  /*  position: relative;*/
+  position: relative;
 }
 
 /*navの設定*/
@@ -32,11 +32,94 @@ header li a {
   text-decoration: none;
   color: #000;
   font-size: 35px;
+  font-family: 'Noto Serif JP', serif;
 }
 
 header li a:hover {
   color: #d2b7df;
 }
+
+
+p {
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+p span {
+  display: inline-block;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  -webkit-font-smoothing: antialiased;
+}
+
+p span::before,
+p span::after {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  transform-origin: left top;
+  transition: all ease-out .3s;
+  content: attr(data-text);
+}
+
+p span::before {
+  z-index: 1;
+  color: rgba(0,0,0,0.2);
+  transform: scale(1.1,1) skew(0deg,20deg);
+}
+
+p span::after {
+  z-index: 2;
+  color: #3498db;
+  text-shadow: -1px 0 1px #3498db,
+                1px 0 1px #fff;
+  transform: rotateY(-40deg);
+}
+
+p span:hover::before { transform: scale(1.1,1) skew(0deg,5deg); }
+
+p span:hover::after { transform: rotateY(-10deg); }
+
+p span + span { margin-left: .3em; }
+
+@media (min-width: 20em) {
+  p { font-size: 2em; }
+
+  p span::before,
+  p span::after {
+    display: block;
+  }
+}
+
+@media (min-width: 30em) {
+  p { font-size: 3em; }
+}
+
+@media (min-width: 40em) {
+  p { font-size: 5em; }
+}
+
+@media (min-width: 60em) {
+  p { font-size: 8em; }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3498db;
+}
+
 
 /*背景（header)*/
 .bg-img img {
@@ -66,39 +149,47 @@ header li a:hover {
   top: 20%;
   right: 0%;
   background-color: #f8ffee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title-1 {
-  padding: 40px 60px 20px;
+/*  padding: 40px 60px 20px;*/
   font-size: 20px;
+  font-family: 'Noto Serif JP', serif;
 }
 
 .info-1 {
-  text-align: center;
+/*  text-align: center;*/
 }
 
 h3 {
   text-align: center;
   font-size: 50px;
   margin: 30px 0px 25px 0px;
+  font-family: 'Noto Serif JP', serif;
 }
 
 h4 {
   text-align: center;
   font-size: 30px;
   margin: 0px 0px 40px 0px;
+  font-family: 'Noto Serif JP', serif;
 }
 
 .p {
   text-align: center;
   margin: 60px 0px 25px 0px;
   font-size: 25px;
+  font-family: 'Noto Serif JP', serif;
 }
 
 .info-2 {
   margin: 70px 0px 5px 0px;
   text-align: center;
   font-size: 15px;
+  font-family: 'Noto Serif JP', serif;
 }
 
 /*portfolio*/
@@ -114,6 +205,7 @@ h4 {
   text-align: center;
   padding: 40px 60px 20px;
   font-size: 60px;
+  font-family: 'Noto Serif JP', serif;
 }
 
 .video {
@@ -135,6 +227,7 @@ h4 {
   padding: 70px 60px 20px;
   font-size: 60px;
   color: aliceblue;
+  font-family: 'Noto Serif JP', serif;
 }
 
 .m-img {
@@ -154,7 +247,7 @@ h4 {
 .member-img {
   display: inline-block;
   margin: 0px 40px 0px 40px;
-/*  インライン要素調べる
+  /*  インライン要素調べる
   インライン横に並べる　margin ×
   ブロック　幅高さを指定できる　縦並びに
   インラインブロック両方
@@ -177,6 +270,7 @@ h4 {
   padding: 0px 60px 20px;
   font-size: 60px;
   color: aliceblue;
+  font-family: 'Noto Serif JP', serif;
 }
 
 .contect-1 {
@@ -204,8 +298,56 @@ h4 {
   font-size: 20px;
   background-color: #fff;
   text-align: center;
-  box-shadow: 20px 15px 12px #eb496d;
+/*  box-shadow: 20px 15px 12px #eb496d;*/
 }
+
+ .conect-bo{
+  display: block;
+  width: 220px;
+  padding: 20px 0;
+  border-radius: 6px;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    to right,
+    #FFCCFF 0%,
+    #eb496d 50%,
+    #fff 50%,
+    #fff 100%
+  );
+  box-shadow: 0 3px 10px rgb(0 0 0 / 16%);
+  transition: background-position ease 0.4s;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.conect-bo:hover {
+  background-position: 0 0;
+}
+
+
+
+
+
+/*
+.conect-bo:hover {
+  color:aquamarine;
+　box-shadow: 0 5px 10px;
+　transform: translate(0, -5px);
+}
+
+*/
+
+/*
+.conect-bo:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  color: #eb496d;
+}
+*/
 
 
 
